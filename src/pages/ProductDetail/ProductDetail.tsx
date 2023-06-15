@@ -14,8 +14,10 @@ import purchaseApi from 'src/apis/purchase.api'
 import path from 'src/constants/path'
 import { convert } from 'html-to-text'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 
 export default function ProductDetail() {
+  const { t } = useTranslation('product')
   const queryClient = useQueryClient()
   const navigate = useNavigate()
 
@@ -234,7 +236,7 @@ export default function ProductDetail() {
                   value={buyCount}
                   max={product.quantity}
                 />
-                <div className='ml-6 text-sm text-gray-500'>{product.quantity} sản phẩm có sẳn</div>
+                <div className='ml-6 text-sm text-gray-500'>{product.quantity + ' ' + t('available')}</div>
               </div>
               <div className='mt-8 flex items-center'>
                 <button
