@@ -30,7 +30,7 @@ export default function Input({
     setOpenEye((prev) => !prev)
   }
   return (
-    <div className={className}>
+    <div className={'relative ' + className}>
       <input
         className={classNameInput}
         {...registerResult}
